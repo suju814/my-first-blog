@@ -50,12 +50,18 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'asdf.urls'
+ROOT_URLCONF = 'blog.urls'
+
+# SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
+# print(">>>>>>>>>"+os.path.join(SETTINGS_PATH, "blog", 'templates', 'blog'))
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [#os.path.join(SETTINGS_PATH, 'templates'),
+                    # os.path.join(SETTINGS_PATH, "blog", 'templates', 'blog')
+                 'E:/django_srujan/test/blog/template/'
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# TEMPLATE_DIRS = (
+#     os.path.join(SETTINGS_PATH, 'templates'),
+# )
